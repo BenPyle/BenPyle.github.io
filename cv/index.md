@@ -1,0 +1,7 @@
+----
+ -layout: default
+ -title: CV
+ ----
+ -	<h1>{{ page.title }}</h1>
+ -  
+ -  <p> Feel free to download my cv [here](../docs/Benjamin_Pyle_Resume_01072017.pdf). If you are interested in the LateX used to generate it, please get in touch. </p>
