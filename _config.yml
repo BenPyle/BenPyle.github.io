@@ -1,4 +1,3 @@
 name: Ben Pye
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-baseurl: /project-name
