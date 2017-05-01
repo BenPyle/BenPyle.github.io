@@ -1,6 +1,12 @@
 <html>
-	<head>
-		<h1 id="project_title">Ben Pyle </h1>	</head>
+   <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/BenPyle/BenPyle.github.io"> </a>
+          <h1 id="project_title">Ben Pyle</h1>
+        </header>
+	
+    </div>
 	<body>
 		<nav>
     		<ul>
