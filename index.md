@@ -1,6 +1,4 @@
 <html>
-	<head>
-		<h1 id="project_title">Ben Pyle </h1>	</head>
 	<body>
 		<nav>
     		<ul>
