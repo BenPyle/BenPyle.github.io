@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ben Pyle </title>
+		<title> Ben Pyle </title>
 	</head>
 	<body>
 		<nav>
