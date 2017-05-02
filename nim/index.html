@@ -1,0 +1,289 @@
+
+<html>
+<head>
+<title>Play nim game online</title>
+<meta http-equiv="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="Play Nim game online 2">
+<META NAME="Keywords" CONTENT="nim game, nim, puzzle, marienbad, Bouton, take-away game, tactix, theory, online">
+<META NAME="Abstract" CONTENT="Nim puzzle to solve online">
+<META NAME="copyright" CONTENT="©1996-2010 | Archimedes Lab">
+<META NAME="robots" CONTENT="FOLLOW,INDEX">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+if (window!= top)  //Detects if page is trapped and breaks out of it!
+top.location.href=location.href
+//-->
+</script>
+<script language="JavaScript">
+<!--
+var z,sp,next_to_that
+      a = new int_array(4)
+      image=new Array()
+      image[1]=new Image()
+      image[1].src="empty1.gif"
+      image[2]=new Image()
+      image[2].src="matcho1.gif"
+
+      function one_way(row) {
+        a[row]--
+        document.images[(row-1)*(row-1)+a[row]].src=image[1].src
+      }
+
+      function player_draught(row) {
+        if (a[1]+a[2]+a[3]+a[4]!=0) {
+          if ((next_to_that==5 || next_to_that==6) && a[row]!=0) next_to_that=row
+          if (next_to_that==row && a[row]!=0) one_way(row)
+          if (a[1]+a[2]+a[3]+a[4]==0)
+            alert("Sorry... I won!");
+        }
+      }
+
+      function m_way(row) {
+        while (a[row]<sp) {
+          sp--
+          document.images[(row-1)*(row-1)+sp].src=image[1].src
+          for (var j=1; j<1500; j++){}
+        }
+      }
+
+      var im=134456
+      var ia=8121
+      var ic=28411
+      var iran
+
+      function randomize()
+      {
+        var now  =new Date()
+        iran=now.getSeconds()
+      }
+
+      function chance(imax)
+      {
+        iran=(iran*ia+ic) % im
+        return(Math.floor(iran/im*imax))
+      }
+
+      function winning_position() {
+        var q,r,s
+        q=(a[1] ^ a[2] ^ a[3] ^ a[4])==0
+        r=(a[1] | a[2] | a[3] | a[4])==1
+        s=q ^ r
+        return(s)
+      }
+
+      function computer_draught() {
+        if (a[1]+a[2]+a[3]+a[4]!=0) {
+          if (next_to_that!=5 && a[1]+a[2]+a[3]+a[4]!=0) {
+            next_to_that=5
+            z=chance(4)+1
+            if (winning_position()) {
+              while (a[z]==0) z=(z % 4)+1
+              one_way(z)
+            }
+            else {
+              while (!winning_position()) {
+                z=(z % 4)+1
+                while (a[z]==0) z=(z % 4)+1
+                sp=a[z]
+                while (!winning_position() && a[z]!=0) a[z]--
+                if (!winning_position()) a[z]=sp
+              }
+              m_way(z)
+            }
+          }
+          for (var j=1; j<1500; j++){}
+          if (a[1]+a[2]+a[3]+a[4]==0)
+            alert("You WON!!! Congratulations...");
+
+        }
+      }
+
+      function int_array(length) { this.length=length }
+
+      function new_game() {
+        a[1]=1;a[2]=3;a[3]=5;a[4]=7
+        next_to_that=6
+        for (var i=0; i<=15; i++) document.images[i].src=image[2].src
+        document.distribution.value="  "
+      }
+
+      function draw(nr) {
+        var str=""
+        str +=""
+        alert(str)
+        if (document.images[nr].src==image[2].src) {
+          document.images[nr].src=image[2].src
+        }
+        else {
+          document.images[nr].src=image[1].src
+        }
+      }
+
+//-->
+</script>
+<style><!--
+a {color: #0000FF}
+a:link {color: #0000FF}
+a:hover {color: #339900}
+a:active {color: #669966}
+
+a.green {text-decoration:none;color:#339900;}
+a.green:link {text-decoration:none;color:#339900;}
+a.green:hover {text-decoration:none;color:#D88100;}
+
+a.orange {text-decoration:none;color:#FF9900;}
+a.orange:link {text-decoration:none;color:#FF9900;}
+a.orange:hover {text-decoration:none;color:#6DC023;}
+
+a.orange2 {text-decoration:none;color:#D9D914;}
+a.orange2:link {text-decoration:none;color:#D9D914;}
+a.orange2:hover {text-decoration:none;color:#666666;}
+
+a.white {text-decoration:none;color:#FFFFFF;}
+a.white:link {text-decoration:none;color:#FFFFFF;}
+a.white:hover {text-decoration:none;color:#666666;}
+
+a.test {text-decoration:underline;color: #FFFFFF;}
+a.test:link {text-decoration:underline;color:#FFFFFF;}
+a.test:hover {text-decoration:none;color:#00FF00;}
+
+H1.type {
+	font-size: 100%;
+	font-style: normal;
+	line-height: normal;
+	display: inline;
+	font-weight: normal;
+}
+
+INPUT.Label {
+	height:16px;
+	background-color:#FFFFCC;
+	border:1px solid #996600;
+	color:#000000;
+	font-size:10px;
+	line-height: normal;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+
+INPUT.Button {
+	height:16px;
+	background-color:#FFCC00;
+	border:1px outset #996600;
+	font-size:10px;
+	line-height:normal;
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+
+INPUT.Button2 {
+	height:16px;
+	background-color:#FF0000;
+	border:1px outset #996600;
+	font-size:10px;
+	line-height:normal;
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	color: #FFFFFF;
+}
+
+--></style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0066FF" alink="#FF0000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="new_game()">
+<table width="300" border="0" align="left" cellpadding="0" cellspacing="0">
+<tr>
+<td height="34" align="center" valign="bottom" background="../images7/top_green-large.gif"><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><em>Online
+Game by Archimedes' Lab</em></font></td>
+</tr>
+<tr>
+<td align="center" valign="top" bgcolor="#6DC023"><p><font color="#663300" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>Play
+Nim against your computer!</b></font></p>
+<blockquote>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1">In one
+move, you can remove any number of matches but only from one row.
+Select any 'Row button' and click it to REMOVE matches. After each
+move click 'PC move' to make the computer play. You win if you leave
+the LAST match for the computer.<br>
+<strong>Who Moves First</strong><br>
+At the start of a game, you have the first move, unless you allow the
+computer to play first by pressing the 'PC move' button.</font></p>
+</blockquote>
+<p></p>
+<form>
+<table BORDER=0 cellpadding="1" cellspacing="1" id="nim game">
+<tr align="center" valign="top">
+<td COLSPAN="3"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td COLSPAN="3"></td>
+<td width="59" valign="middle"><input name="button" type="button" class="button" onClick="player_draught(1)" value="Row 1">
+</td>
+</tr>
+<tr align="center" valign="top">
+<td COLSPAN="2"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td COLSPAN="2"></td>
+<td width="59" valign="middle"><input name="button2" type="button" class="button" onClick="player_draught(2)" value="Row 2">
+</td>
+</tr>
+<tr align="center" valign="top">
+<td width="32"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"><img SRC="matcho1.gif"></td>
+<td width="32"></td>
+<td width="59" valign="middle"><input name="button2" type="button" class="button" onClick="player_draught(3)" value="Row 3">
+</td>
+</tr>
+<tr align="center" valign="top">
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="32"><img SRC="matcho1.gif"></td>
+<td WIDTH="59" valign="middle"><input name="button2" type="button" class="button" onClick="player_draught(4)" value="Row 4">
+</td>
+</tr>
+<tr align="center" valign="middle">
+<td height="70" colspan="7"><input name="button2" type="button" class="button" onClick="new_game()" value="New game">
+&nbsp;
+<input name="button2" type="button" class="button" onClick="javascript:window.close()" value="Close window">
+</td>
+<td height="70"><input name="button2" type="button" class="button2" onClick="computer_draught()" value="PC move">
+</td>
+</tr>
+</table>
+</form>
+<blockquote>
+<p><font color="#663300" size="1" face="Verdana, Arial, Helvetica, sans-serif"><b>Why <a href="../How_to_Solve/Win_at_Nim.html" target="_blank">the computer
+beats you</a> repeatedly at Nim game...</b></font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif">You can
+copy the javascript program of this <strong>Nim game</strong>...
+Feel free to modify or improve it! We would appreciate receiving
+any <a onmouseover="window.status='send a message';return true" title="comments welcome" href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#097;&#114;&#099;&#104;&#105;&#109;&#101;&#100;&#101;&#115;&#045;&#108;&#097;&#098;&#046;&#111;&#114;&#103;">comments</a> or
+suggestions concerning this script.</font></p>
+</blockquote>
+<script LANGUAGE="JavaScript"><!--
+     randomize()
+   //--></script>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top"><img src="../images7/top_green-large-up.gif" alt="decoration" width="447" height="34"></td>
+</tr>
+<tr>
+<td align="center" valign="top"><img SRC="../images/fondu.gif" ALT="line" BORDER="0" height="1" width="100%"><br>
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">&copy; <a href="index.html" target="_blank">Archimedes'
+Lab</a> </font><font color="#339900" size="1" face="Verdana, Arial, Helvetica, sans-serif">enhances
+your critical and creative thinking skills</font></td>
+</tr>
+</table>
+</body>
+</html>
