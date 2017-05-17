@@ -12,7 +12,7 @@ var z,sp,next_to_that
       image[2].src="penny.gif"
 
       function one_way(row,col) {
-        if (document.images[(row-1)*(row-1)+col-1].src==image[2].src) {
+        if (document.images[(row-1)*(row-1)+col-1].src!=image[2].src) {
             a[row]--
             document.images[(row-1)*(row-1)+col-1].src=image[1].src
         }
