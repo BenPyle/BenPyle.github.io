@@ -19,7 +19,7 @@ var z,sp,next_to_that
       function player_draught(row,col) {
         if (a[1]+a[2]+a[3]+a[4]!=0) {
           if ((next_to_that==5 || next_to_that==6) && a[row]!=0) next_to_that=row
-          if (next_to_that==row && a[row]!=0 && document.images[(row-1)*(row-1)+col-1].src!=image[1].src) one_way(row,col)
+          if (next_to_that==row && a[row]!=0 && document.images[(row-1)*(row-1)+col-1].src==image[2].src) one_way(row,col)
           if (a[1]+a[2]+a[3]+a[4]==0)
             alert("Sorry... I won!");
         }
