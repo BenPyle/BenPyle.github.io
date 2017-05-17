@@ -27,7 +27,7 @@ var z,sp,next_to_that
 
       function m_way(row) {
         var tmp=a[row]
-        console.log(tmp + "," + sp + "," + row + "," (row-1)*(row-1)+sp)
+        console.log(tmp + "," + sp + "," + row + "," + (row-1)*(row-1)+sp)
         while (tmp<sp) {
           sp--
           if (document.images[(row-1)*(row-1)+sp].src==image[1].src) {
