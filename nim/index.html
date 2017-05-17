@@ -28,13 +28,14 @@ var z,sp,next_to_that
       function m_way(row) {
         var tmp=a[row]
         var i = 0
+        var k = 0
         console.log(tmp + "," + sp + "," + row + "," + (row-1)*(row-1)+sp)
-        while (i<a[row]-sp) {
+        while (i<a[row]-sp && j<10) {
           if (document.images[(row-1)*(row-1)+i].src==image[2].src) {
-                document.images[(row-1)*(row-1)+i].src=image[1].src
+                document.images[(row-1)*(row-1)+i].src=image[1].src   
                 i++
           }
-          
+          k++
           for (var j=1; j<1500; j++){}
         }
       }
