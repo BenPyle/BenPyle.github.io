@@ -5,6 +5,7 @@
 <!--
 var z,sp,next_to_that
       a = new int_array(4)
+      b = new int_array(4)
       image=new Array()
       image[1]=new Image()
       image[1].src="blank.gif"
@@ -30,7 +31,7 @@ var z,sp,next_to_that
         var i = 0
         var k = 0
         console.log(sp-a[row] + "," + row + "," + i)
-        while (i<sp-a[row] && k<=sp) {
+        while (i<sp-a[row] && k<=b[row]) {
           if (document.images[(row-1)*(row-1)+k].src==image[2].src) {
                 document.images[(row-1)*(row-1)+k].src=image[1].src   
                 i++
@@ -98,6 +99,7 @@ var z,sp,next_to_that
 
       function new_game() {
         a[1]=1;a[2]=3;a[3]=5;a[4]=7
+        b[1]=1;b[2]=3;b[3]=5;b[4]=7
         next_to_that=6
         for (var i=0; i<=15; i++) document.images[i].src=image[2].src
         document.distribution.value="  "
