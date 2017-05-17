@@ -29,10 +29,10 @@ var z,sp,next_to_that
         var tmp=a[row]
         while (tmp<sp) {
           sp--
-          if (document.images[(row-1)*(row-1)+sp+1].src==image[1].src) {
+          if (document.images[(row-1)*(row-1)+sp-1].src==image[1].src) {
             tmp--
           }
-          document.images[(row-1)*(row-1)+sp+1].src=image[1].src
+          document.images[(row-1)*(row-1)+sp-1].src=image[1].src
           for (var j=1; j<1500; j++){}
         }
       }
