@@ -29,8 +29,8 @@ var z,sp,next_to_that
         var tmp=a[row]
         var i = 0
         var k = 0
-        console.log(a[row]-sp + "," + row + "," + i)
-        while (i<a[row]-sp && k<10) {
+        console.log(sp-a[row] + "," + row + "," + i)
+        while (i<sp-a[row] && k<10) {
           if (document.images[(row-1)*(row-1)+i].src==image[2].src) {
                 document.images[(row-1)*(row-1)+i].src=image[1].src   
                 i++
