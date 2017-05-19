@@ -68,13 +68,15 @@ var z,sp,next_to_that
       }
 
       function computer_draught() {
+        var n=1
         if (a[1]+a[2]+a[3]+a[4]!=0) {
           if (next_to_that!=5 && a[1]+a[2]+a[3]+a[4]!=0) {
             next_to_that=5
             z=chance(4)+1
             if (winning_position()) {
               while (a[z]==0) z=(z % 4)+1
-              one_way(z)
+              while (document.images[(z-1)*(z-1)+n-1].src==image[1].src) n++
+              one_way(z,n)
             }
             else {
               while (!winning_position()) {
@@ -192,17 +194,12 @@ INPUT.Button2 {
 <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0066FF" alink="#FF0000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="new_game()">
 <table width="300" border="0" align="left" cellpadding="0" cellspacing="0">
 <tr>
-<td align="center" valign="top" bgcolor="#FFFFFF"><p><font color="#663300" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>Play
-Nim against your computer, code from archimedes lab!</b></font></p>
+<td align="center" valign="top" bgcolor="#FFFFFF"><p><font color="#663300" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>Let's play some Nim!</b></font></p>
 <blockquote>
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1">In one
-move, you can remove any number of matches but only from one row.
-Select any 'Row button' and click it to REMOVE matches. After each
-move click 'PC move' to make the computer play. You win if you leave
-the LAST match for the computer.<br>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1">You can remove any number of pennies from any ONE
+      row at a time. Click a penny to remove it. Complete your turn by clicking PC move. You win if the computer takes the last penny.<br>
 <strong>Who Moves First</strong><br>
-At the start of a game, you have the first move, unless you allow the
-computer to play first by pressing the 'PC move' button.</font></p>
+You move first, or PC moves first if you click PC move.</font></p>
 </blockquote>
 <p></p>
 <form>
@@ -248,11 +245,9 @@ computer to play first by pressing the 'PC move' button.</font></p>
 </table>
 </form>
 <blockquote>
-<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif">You can
-copy the javascript program of this <strong>Nim game</strong>...
-Feel free to modify or improve it! We would appreciate receiving
-any <a onmouseover="window.status='send a message';return true" title="comments welcome" href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#097;&#114;&#099;&#104;&#105;&#109;&#101;&#100;&#101;&#115;&#045;&#108;&#097;&#098;&#046;&#111;&#114;&#103;">comments</a> or
-suggestions concerning this script.</font></p>
+<p><font size="1" face="Verdana, Arial, Helvetica, sans-serif">This code is adapted from code from Archimedes Lab,
+      I recommend checking their cite out if you like this version. Fair warning, this is my first time working in javascript,
+      comments and suggestions welcome.</font></p>
 </blockquote>
 <script LANGUAGE="JavaScript"><!--
      randomize()
