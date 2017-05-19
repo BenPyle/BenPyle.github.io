@@ -35,7 +35,7 @@ var z,sp,next_to_that
           if (document.images[(row-1)*(row-1)+k].src==image[2].src) {
                 document.images[(row-1)*(row-1)+k].src=image[1].src   
                 i++
-                console.log(i)
+                //console.log(i)
           }
           k++
           for (var j=1; j<1500; j++){}
@@ -94,7 +94,7 @@ var z,sp,next_to_that
             alert("You WON!!! Congratulations...");
 
         }
-            console.log(a[1] + "," + a[2]  +  ","  +   a[3]  + ","  +  a[4])
+            //console.log(a[1] + "," + a[2]  +  ","  +   a[3]  + ","  +  a[4])
       }
 
       function int_array(length) { this.length=length }
@@ -236,9 +236,7 @@ You move first, or PC moves first if you click PC move.</font></p>
 </tr>
 <tr align="center" valign="middle">
 <td height="70" colspan="7"><input name="button2" type="button" class="button" onClick="new_game()" value="New game">
-&nbsp;
-<input name="button2" type="button" class="button" onClick="javascript:window.close()" value=a[1]>
-</td>
+&nbsp; </td>
 <td height="70"><input name="button2" type="button" class="button2" onClick="computer_draught()" value="PC move">
 </td>
 </tr>
