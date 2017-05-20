@@ -41,13 +41,21 @@ The idea here is that each digit in the base two representation represents a pow
 
 Nim sum works by adding in base two and ignoring any carries from one digit to another. This is mostly easily seen with an example. 
 
-|var  | =    |decimal    |Base 2 |
+|var  |     |decimal    |Base 2 |
 | --- | --- | --- | ---            |
 |x    |=    |4    |=$$(0100)_2 $$ |
 |y    |=    |5    |=$$(0101)_2 $$ |
-|x+y  |=    |1    |=$$(0001)_2 $$ |
+|x$$\oplus$$y  |=    |1    |=$$(0001)_2 $$ |
 
-Note we "canceled" out the 1 in the $$2^2$$ position.
+Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lot of the same properties as our standard operators, it is assosciated, has an identity with 0, and has a negative (itself).
+
+<details> 
+  <summary>Q2: $$22 \oplus 15 \oplus 13$$?  </summary>
+         $$ 22= 10110 \oplus $$
+         $$ 15= 01111 \oplus $$
+         _$$ 13= 01101 $$_
+         $$ 20= 10100 $$           
+</details>
 
 
 
