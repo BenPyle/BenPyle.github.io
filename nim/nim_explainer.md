@@ -53,8 +53,8 @@ Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lo
   <summary>Q2: $$22 \oplus 15 \oplus 13$$?  </summary>
          $$ 22= 10110 \oplus $$
          $$ 15= 01111 \oplus $$
-         _$$ 13= 01101 $$_
-         $$ 20= 10100 $$           
+         <u> $$ 13= 01101 $$</u>
+         <b>  $$ 20= 10100 $$ </b>            
 </details>
 
 
