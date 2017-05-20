@@ -1,3 +1,5 @@
+
+
 The following explanation is adapted from Tom Ferguson's note's, <https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf>. 
 
 Nim is an example of a <b>take-away game</b>, and of the larger class of combinatorial games. This game clearly has perfect information, and no stochastic elements, so we know who wins based on the initial position. It is solved, which explains why you can't win if the computer plays second. 
@@ -16,5 +18,14 @@ Ferguson shows how to generalize this using a recursive procedure for a broad cl
 
 Let's build some intuition, by looking at a few positions. We have a good sense of how one pile Nim works, but what about two? For convenience I will represent the number of pennies in each row seperated by a column, so (1,0) is one penny in the first row (a P-position). So what is (1,1)? The next player can move to a P-position (1,0) by taking one from the second row, so this is an N-position. What about (1,2)? This is an N-position as well, as are any of the form (1,n)! Let's think about adding a row next. (1,1,1) turns out to be an P-position, because any possible move collapses to (1,1) which is an N-position. 
 
-Test your intuition. What is (1,3,1)? 
->! N-Position, removing two from the second stack gets to a P-position.
+<details> 
+  <summary>Q1: Test your intuition. What is (1,3,1)?  </summary>
+   N-Position, removing two from the second stack gets to a P-position. A single turn to an P-position means it is a P-position.
+</details>
+
+Ok, that example wasn't so bad, but what if we get something more complicated, like (4,3,15)?
+
+<b>Don't be a dumb-dumb, learn how to Nim-sum:<b>
+
+It turns out that Nim is really all about the exclusive or operator (xor). We will express the xor operator as $$\xor$$
+
