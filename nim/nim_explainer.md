@@ -37,5 +37,7 @@ It turns out that Nim is really all about the exclusive or operator (xor). We wi
 | 3 | $$(0011)_2 $$ |
 |15 | $$(1111)_2 $$ |
 
-The idea here is that each digit in the base two representation represents a power of 2, i.e. $$(2^n,...,2^3,2^2,2^1,2^0)$$. Summing up a base two representation if there is a 1 gets you back to decimal (i.e. $$(0100)_2= 0*2^3+1*2^2+0*2^1+0*2^0)=4$$). But this isn't so different from what we do in base 10, $$(015)=0*10^2+1*10^1+5*10^0=15$$.
+The idea here is that each digit in the base two representation represents a power of 2, i.e. $$(2^n,...,2^3,2^2,2^1,2^0)$$. Summing up a base two representation if there is a 1 gets you back to decimal (i.e. $$(0100)_2= 0*2^3+1*2^2+0*2^1+0*2^0)=4$$). But this isn't so different from what we do in base 10, $$(015)_{10}=0*10^2+1*10^1+5*10^0=15$$.
+
+
 
