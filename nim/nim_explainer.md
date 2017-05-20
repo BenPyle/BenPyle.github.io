@@ -25,7 +25,7 @@ Let's build some intuition, by looking at a few positions. We have a good sense 
 
 Ok, that example wasn't so bad, but what if we get something more complicated, like (4,3,15)?
 
-<b>Don't be a dumb-dumb, learn how to Nim-sum:<b>
+<b>Don't be a dumb-dumb, learn how to Nim-sum:</b>
 
 It turns out that Nim is really all about the exclusive or operator (xor). We will express the xor operator as $$\xor$$
 
