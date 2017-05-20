@@ -1,4 +1,6 @@
-
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 The following explanation is adapted from Tom Ferguson's note's, <https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf>. 
 
