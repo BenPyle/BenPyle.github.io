@@ -2,11 +2,19 @@ The following explanation is adapted from Tom Ferguson's note's, <https://www.ma
 
 Nim is an example of a <b>take-away game</b>, and of the larger class of combinatorial games. This game clearly has perfect information, and no stochastic elements, so we know who wins based on the initial position. It is solved, which explains why you can't win if the computer plays second. 
   
-<b> P-positions:<b> A P-position is simply any position that is winning for the previous player. 
-<b> N-positions:<b> Unsuprisingly, N-positions are positions that are winning for the next player
-Say we are playing a very boring version of Nim with one pile with 4 pennies. A pile with 1 pennies, means the next player who plays next is definetly going to lose. If the next player loses, the previous player must be a winner. Thus we have a P-position! If 1 is a p-position, and a player can move from 2,3,4 to 1 (by taking 1,2, or 3 pennies respectively), 2,3, and 4 must be N-positions.
+<b> P-positions:</b> A P-position is simply any position that is winning for the previous player. 
+
+<b> N-positions:</b> Unsuprisingly, N-positions are positions that are winning for the next player
+
+Say we are playing a very boring version of Nim with one pile with 4 pennies. A pile with 1 pennies, means the next player who plays next is definetly going to lose. If the next player loses, the previous player must be a winner. Thus we have a P-position! If 1 is a p-position, and a player can move from 2,3,4 to 1 (by taking 1,2, or 3 pennies respectively), 2,3, and 4 must be N-positions. Note that the rules of Nim we have been considering are actually the misère rules, in which the player who takes the last coin loses. "Normal play" is defined as the player who takes the last coin wins. This doesn't make a huge difference for our analysis for Nim, but can complicate other games.
+
 Ferguson shows how to generalize this using a recursive procedure for a broad class of games.
-1. Terminal nodes are P-positions (this can be changed for misere rules, in which the last player to take a penny wins)
+1. Terminal nodes are P-positions (this can be changed for misère rules, in which the last player to take a penny wins)
 2. Positions that can reach P-positions in one turn are N-positions.
 3. Positions that can only reach N-positions in one turn are P-positions.
 4. Repeat 2 and 3 until no unlabeled positions.
+
+Let's build some intuition, by looking at a few positions. We have a good sense of how one pile Nim works, but what about two? For convenience I will represent the number of pennies in each row seperated by a column, so (1,0) is one penny in the first row (a P-position). So what is (1,1)? The next player can move to a P-position (1,0) by taking one from the second row, so this is an N-position. What about (1,2)? This is an N-position as well, as are any of the form (1,n)! Let's think about adding a row next. (1,1,1) turns out to be an P-position, because any possible move collapses to (1,1) which is an N-position. 
+
+Test your intuition. What is (1,3,1)? 
+.> N-Position, removing two from the second stack gets to a P-position.
