@@ -29,5 +29,5 @@ Ok, that example wasn't so bad, but what if we get something more complicated, l
 
 <b>Don't be a dumb-dumb, learn how to Nim-sum:</b>
 
-It turns out that Nim is really all about the exclusive or operator (xor). We will express the xor operator as $$\xor$$
+It turns out that Nim is really all about the exclusive or operator (xor). We will express the xor operator as $$\oplus$$
 
