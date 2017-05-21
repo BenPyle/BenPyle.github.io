@@ -61,7 +61,7 @@ Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lo
 
 So what does Nim-sum have to do with Nim? 
 
-<b>Bouton's Theorem:</b> In Nim, under "normal play" rules, a position \((x_1, x_2, ..., x_n)\) is a P-position iff the nim-sum over all piles, \(x_1 \oplus x_2 \oplus ... \oplus x_n)\) is 0. 
+<b>Bouton's Theorem:</b> In Nim, under "normal play" rules, a position $$(x_1, x_2, ..., x_n)$$ is a P-position iff the nim-sum over all piles, $$x_1 \oplus x_2 \oplus ... \oplus x_n)$$ is 0. 
 
 <b> Proof: </b> Let's check this is true. Under normal play, we will consider the last position as 0 coins remaining (note I was loose in my definition of this earlier, and called one coin left the terminal position, this is technically incorrect, but makes the analysis under misere simpler) \(  0 \oplus 0 \oplus ... \oplus 0) \) is 0. This condition is satisfied. 
 
