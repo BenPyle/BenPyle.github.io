@@ -61,11 +61,11 @@ Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lo
 
 So what does Nim-sum have to do with Nim? 
 
-<b>Bouton's Theorem:</b> In Nim, under "normal play" rules, a position $$(x_1, x_2, ..., x_n)$$ is a P-position iff the nim-sum over all piles, $$x_1 \oplus x_2 \oplus ... \oplus x_n)$$ is 0. 
+<b>Bouton's Theorem:</b> In Nim, under "normal play" rules, a position $$(x_1, x_2, ..., x_n)$$ is a P-position iff the nim-sum over all piles, $$(x_1 \oplus x_2 \oplus ... \oplus x_n)$$ is 0. 
 
-<b> Proof: </b> Let's check this is true. Under normal play, we will consider the last position as 0 coins remaining (note I was loose in my definition of this earlier, and called one coin left the terminal position, this is technically incorrect, but makes the analysis under misere simpler) \(  0 \oplus 0 \oplus ... \oplus 0) \) is 0. This condition is satisfied. 
+<b> Proof: </b> Let's check this is true. Under normal play, we will consider the last position as 0 coins remaining (note I was loose in my definition of this earlier, and called one coin left the terminal position, this is technically incorrect, but makes the analysis under misere simpler)  $$0 \oplus 0 \oplus ... \oplus 0)$$ is 0. This condition is satisfied. 
 
-Every move from a P-position is to an N-position. We can show this by contradiction. We are in P-position \( (x_1, x_2,...,x_n) \), so \(  x_1 \oplus x_2 \oplus ... \oplus x_n) \) = 0. Claim, there is some \( x'_i \lt x_i \) s.t. \(  x'_1 \oplus x_2 \oplus ...\oplus  x_i \oplus ... \oplus x_n) \) = 0. But for this to be true, by the negation property established earlier, \( x'_i = x_i \), which is a contradiction to our assumption. So any move must lead to an N-position.
+Every move from a P-position is to an N-position. We can show this by contradiction. We are in P-position $$ (x_1, x_2,...,x_n) $$, so  $$x_1 \oplus x_2 \oplus ... \oplus x_n) = 0$$. Claim, there is some $$ x'_i \lt x_i  s.t.  x'_1 \oplus x_2 \oplus ...\oplus  x_i \oplus ... \oplus x_n)  = 0$$. But for this to be true, by the negation property established earlier, $$ x'_i = x_i $$, which is a contradiction to our assumption. So any move must lead to an N-position.
 
 Every N-position can move to a P-position: To move from N to P, find the leftmost column with an odd number of 1's. Remove the leading 1 from one of the rows with a 1 in the leftmost colum with an odd number, and change the entries in this row such that all trailing columns have an even number of 1's. This will always be possible since every column is clearly at most one 1 away from having an even number of 1's. This move will always be legal because removing the leading 1 will shrink the total of the row regardless of what happens to the following columns. QED
 
