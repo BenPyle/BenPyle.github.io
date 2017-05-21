@@ -24,13 +24,14 @@ var z,sp,next_to_that
           if (a[1]+a[2]+a[3]+a[4]==0)
             alert("Sorry... I won!");
         }
+         update_hint(row)
       }
 
       function m_way(row) {
         var tmp=a[row]
         var i = 0
         var k = 0
-        console.log(sp-a[row] + "," + row + "," + i)
+        //console.log(sp-a[row] + "," + row + "," + i)
         while (i<sp-a[row] && k<=b[row]) {
           if (document.images[(row-1)*(row-1)+k].src==image[2].src) {
                 document.images[(row-1)*(row-1)+k].src=image[1].src   
@@ -42,6 +43,10 @@ var z,sp,next_to_that
         }
       }
 
+      function update_hint(row){
+            document.getElementById("r"+row).textContent=(a[row]>>> 0).toString(2);
+      }
+      
       var im=134456
       var ia=8121
       var ic=28411
@@ -89,6 +94,7 @@ var z,sp,next_to_that
               m_way(z)
             }
           }
+              update_hint(row)
           for (var j=1; j<1500; j++){}
           if (a[1]+a[2]+a[3]+a[4]==0)
             alert("You WON!!! Congratulations...");
@@ -224,3 +230,8 @@ You move first, or PC moves first if you click PC move.</font></p>
 </table>
 </body>
 </html>
+
+<span id="r1"> 001 </span>
+<span id="r2"> 011 </span>
+<span id="r3"> 101 </span>
+<span id="r4"> 111 </span>
