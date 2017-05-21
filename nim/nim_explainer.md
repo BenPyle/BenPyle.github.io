@@ -50,11 +50,11 @@ Nim sum works by adding in base two and ignoring any carries from one digit to a
 Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lot of the same properties as our standard operators, it is assosciated, has an identity with 0, and has a negative (itself).
 
 <details> 
-  <summary>Q2: $$22 \oplus 15 \oplus 13$$?  </summary>
+  <summary>$$ Q2: 22 \oplus 15 \oplus 13$$?  </summary>
          $$ 22= 10110 \oplus $$
          $$ 15= 01111 \oplus $$
-         <u> $$ 13= 01101 $$</u>
-         <b>  $$ 20= 10100 $$ </b>            
+         $$ \underline{13= 01101} $$
+         $$ \textbf{20= 10100} $$           
 </details>
 
 
