@@ -44,9 +44,16 @@ var z,sp,next_to_that
       }
 
       function update_hint(row){
-            document.getElementById("r"+row).textContent=(a[row]>>> 0).toString(2);
+            document.getElementById("r"+row).textContent=dec2bin(a[row]);
       }
       
+      function dec2bin(num){
+            var numtemp = (num >>> 0).toString(2)
+            while(numtemp.length < 3) {
+                  numtemp = "0" + numtemp;
+            }
+            return numtemp
+
       var im=134456
       var ia=8121
       var ic=28411
