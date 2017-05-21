@@ -2,10 +2,14 @@
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+# What's Nim about?
+
 The following explanation is adapted and borrows heavily from Tom Ferguson's notes, <https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf>. 
 
 Nim is an example of a <b>take-away game</b>, and of the larger class of combinatorial games. This game clearly has perfect information and no stochastic elements, so we know who wins based on the initial position. It is solved, which explains why you can't win if the computer plays second. 
-  
+
+## Mind your N's and P's
+
 <b> P-positions:</b> A P-position is simply any position that is winning for the previous player. 
 
 <b> N-positions:</b> Unsuprisingly, N-positions are positions that are winning for the next player
@@ -27,7 +31,7 @@ Let's build some intuition, by looking at a few positions. We have a good sense 
 
 Ok, that example wasn't so bad, but what if we get something more complicated, like (4,3,15)?
 
-<b>Don't be a dumb-dumb, learn how to Nim-sum:</b>
+## Don't be a dumb-dumb, learn how to Nim-sum:
 
 It turns out that Nim is really all about the exclusive or operator (xor). We will express the xor operator as $$\oplus$$. Nim-sum is thus about adding in base 2. Here is a quick review of conversion between a binary representation (base 2), and decimal.
 
@@ -60,6 +64,8 @@ Note we "canceled" out the 1 in the $$2^2$$ position. Note that nim-sum has a lo
 </details>
 
 So what does Nim-sum have to do with Nim? 
+
+## How to win Nim
 
 <b>Bouton's Theorem:</b> In Nim, under "normal play" rules, a position $$(x_1, x_2, ..., x_n)$$ is a P-position iff the nim-sum over all piles, $$(x_1 \oplus x_2 \oplus ... \oplus x_n)$$ is 0. 
 
