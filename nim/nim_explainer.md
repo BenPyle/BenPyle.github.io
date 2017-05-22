@@ -75,5 +75,7 @@ Every move from a P-position is to an N-position. We can show this by contradict
 
 Every N-position can move to a P-position: To move from N to P, find the leftmost column with an odd number of 1's. Remove the leading 1 from one of the rows with a 1 in the leftmost colum with an odd number, and change the entries in this row such that all trailing columns have an even number of 1's. This will always be possible since every column is clearly at most one 1 away from having an even number of 1's. This move will always be legal because removing the leading 1 will shrink the total of the row regardless of what happens to the following columns. QED
 
+## No misery, win at misère
+
 Note that this proof is constructive and tells you the next move you want to make. Note that the above proof is for the normal version of Nim. However, most of our discussion and the game on this site are in the more common misère version of the game. In order to adapt the proof for misère, play as if the game was under the normal rules until there are less than 2 rows only 1 remaining. Eventually your opponent will eventually be forced to move so that there is exactly one pile greater than 1 (or two rows each with 1). You can then win by leaving only 1 left in 1 row, forcing the other play to lose! It turns out a lot of combinatorial games are actually just Nim in disguise. You can test your understanding by winning the game here: <https://benpyle.github.io/nim/>
 
