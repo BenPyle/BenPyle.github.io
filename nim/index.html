@@ -15,6 +15,7 @@ var z,sp,next_to_that
       function one_way(row,col) {
             a[row]--
             document.images[(row-1)*(row-1)+col-1].src=image[1].src
+            update_hint(row)
       }
 
       function player_draught(row,col) {
@@ -23,8 +24,7 @@ var z,sp,next_to_that
           if (next_to_that==row && a[row]!=0 ) one_way(row,col)
           if (a[1]+a[2]+a[3]+a[4]==0)
             alert("Sorry... I won!");
-        }
-         update_hint(row)
+        }   
       }
 
       function m_way(row) {
@@ -41,6 +41,7 @@ var z,sp,next_to_that
           k++
           for (var j=1; j<1500; j++){}
         }
+        update_hint(row)    
       }
 
       function update_hint(row){
@@ -109,7 +110,7 @@ var z,sp,next_to_that
 
         }
             //console.log(a[1] + "," + a[2]  +  ","  +   a[3]  + ","  +  a[4])
-             update_hint(row)
+             
       }
 
       function int_array(length) { this.length=length }
