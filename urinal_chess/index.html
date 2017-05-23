@@ -25,16 +25,15 @@ var z,sp,next_to_that
       }
       
       function player_draught(col) {
-        console.log(col)
-            one_way(col)
-
         if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col].src==image[2].src) {
           one_way(col)
           if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0)
             alert("You win");
         }   
       }
-      function m_way(row) {
+      
+      function computer_draught() {
+            stack_count()
       }
       
       function stack_count(){
@@ -46,6 +45,11 @@ var z,sp,next_to_that
                         if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++  
                   }
             }
+      }
+      
+      function winning_position() {
+        var q=(a[1] ^ a[2] ^ a[3] ^ a[4]^ a[5]^ a[6]^ a[7]^ a[8]^ a[9])==0
+        return(q)
       }
       
       var im=134456
