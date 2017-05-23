@@ -37,8 +37,9 @@ var z,sp,next_to_that
             var stack=1
             for (var i=0; i<=8; i++) {
                   if (document.images[i].src==image[2].src) a[stack]++
-                  if i!=8{
-                        if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++            
+                  if (i!=8) {
+                        if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++  
+                  }
             }
       }
       
