@@ -10,9 +10,12 @@ var z,sp,next_to_that
       b = new int_array(4)
       image=new Array()
       image[1]=new Image()
-      image[1].src="blank.gif"
+      image[1].src="urinal_filled.gif"
       image[2]=new Image()
-      image[2].src="penny.gif"
+      image[2].src="urinal.gif"
+      image[3]=new Image()
+      image[3].src="urinal_x.gif"
+      
       function one_way(row,col) {
             a[row]--
             document.images[(row-1)*(row-1)+col-1].src=image[1].src
@@ -27,32 +30,8 @@ var z,sp,next_to_that
         }   
       }
       function m_way(row) {
-        var tmp=a[row]
-        var i = 0
-        var k = 0
-        //console.log(sp-a[row] + "," + row + "," + i)
-        while (i<sp-a[row] && k<=b[row]) {
-          if (document.images[(row-1)*(row-1)+k].src==image[2].src) {
-                document.images[(row-1)*(row-1)+k].src=image[1].src   
-                i++
-                //console.log(i)
-          }
-          k++
-          for (var j=1; j<1500; j++){}
-        }
-        update_hint(row)    
-      }
-      function update_hint(row){
-            document.getElementById("r"+row).textContent=dec2bin(a[row]);
       }
       
-      function dec2bin(num){
-            var numtemp = (num >>> 0).toString(2)
-            while(numtemp.length < 3) {
-                  numtemp = "0" + numtemp;
-            }
-            return numtemp
-      }
       
       var im=134456
       var ia=8121
@@ -68,6 +47,7 @@ var z,sp,next_to_that
         iran=(iran*ia+ic) % im
         return(Math.floor(iran/im*imax))
       }
+      
       function winning_position() {
         var q,r,s
         q=(a[1] ^ a[2] ^ a[3] ^ a[4])==0
@@ -85,17 +65,7 @@ var z,sp,next_to_that
         for (var i=0; i<=8; i++) document.images[i].src=image[2].src
         document.distribution.value="  "
       }
-      function draw(nr) {
-        var str=""
-        str +=""
-        alert(str)
-        if (document.images[nr].src==image[2].src) {
-          document.images[nr].src=image[2].src
-        }
-        else {
-          document.images[nr].src=image[1].src
-        }
-      }
+      
 //-->
 </script>
   
