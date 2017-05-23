@@ -3,21 +3,138 @@ layout: default
 title: Pee Positions
 ---
 <html>
-
+<script language="JavaScript">
+<!--
+var z,sp,next_to_that
+      a = new int_array(4)
+      b = new int_array(4)
+      image=new Array()
+      image[1]=new Image()
+      image[1].src="blank.gif"
+      image[2]=new Image()
+      image[2].src="penny.gif"
+      function one_way(row,col) {
+            a[row]--
+            document.images[(row-1)*(row-1)+col-1].src=image[1].src
+            update_hint(row)
+      }
+      function player_draught(row,col) {
+        if (a[1]+a[2]+a[3]+a[4]!=0 && document.images[(row-1)*(row-1)+col-1].src==image[2].src) {
+          if ((next_to_that==5 || next_to_that==6) && a[row]!=0) next_to_that=row
+          if (next_to_that==row && a[row]!=0 ) one_way(row,col)
+          if (a[1]+a[2]+a[3]+a[4]==0)
+            alert("Sorry... I won!");
+        }   
+      }
+      function m_way(row) {
+        var tmp=a[row]
+        var i = 0
+        var k = 0
+        //console.log(sp-a[row] + "," + row + "," + i)
+        while (i<sp-a[row] && k<=b[row]) {
+          if (document.images[(row-1)*(row-1)+k].src==image[2].src) {
+                document.images[(row-1)*(row-1)+k].src=image[1].src   
+                i++
+                //console.log(i)
+          }
+          k++
+          for (var j=1; j<1500; j++){}
+        }
+        update_hint(row)    
+      }
+      function update_hint(row){
+            document.getElementById("r"+row).textContent=dec2bin(a[row]);
+      }
+      
+      function dec2bin(num){
+            var numtemp = (num >>> 0).toString(2)
+            while(numtemp.length < 3) {
+                  numtemp = "0" + numtemp;
+            }
+            return numtemp
+      }
+      
+      var im=134456
+      var ia=8121
+      var ic=28411
+      var iran
+      function randomize()
+      {
+        var now  =new Date()
+        iran=now.getSeconds()
+      }
+      function chance(imax)
+      {
+        iran=(iran*ia+ic) % im
+        return(Math.floor(iran/im*imax))
+      }
+      function winning_position() {
+        var q,r,s
+        q=(a[1] ^ a[2] ^ a[3] ^ a[4])==0
+        r=(a[1] | a[2] | a[3] | a[4])==1
+        s=q ^ r
+        return(s)
+      }
+      function computer_draught() {
+      }
+  
+      function int_array(length) { this.length=length }
+  
+      function new_game() {
+        a[1]=9
+        for (var i=0; i<=8; i++) document.images[i].src=image[2].src
+        document.distribution.value="  "
+      }
+      function draw(nr) {
+        var str=""
+        str +=""
+        alert(str)
+        if (document.images[nr].src==image[2].src) {
+          document.images[nr].src=image[2].src
+        }
+        else {
+          document.images[nr].src=image[1].src
+        }
+      }
+//-->
+</script>
+  
 <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0066FF" alink="#FF0000" leftmargin="0" topmargin="5" marginwidth="0" marginheight="0" onLoad="new_game()">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
 <tr>
 <td align="center" valign="top" bgcolor="#FFFFFF"><p style= LINE-HEIGHT:15px><font color="#663300" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>Let's play some Nim!</b></font></p>
-<p style= LINE-HEIGHT:10px><font face="Verdana, Arial, Helvetica, sans-serif" size="1">You can remove any number of pennies from any ONE row at a time. Click a penny to remove it. Complete your turn by clicking PC move. You win if the computer takes the last penny.<br> You move first, or PC moves first if you click PC move.</font></p>
+<p style= LINE-HEIGHT:10px><font face="Verdana, Arial, Helvetica, sans-serif" size="1">
+   Rules: Two players take turns occupying urinals with an ndless supply of men who have to pee. You can only occupy one urinal per turn, and if you can you must
+  (everyone has to pee). Click a urinal to fill it. Complete your turn by clicking PC move. You win by filling the last available urinal.<br> You move first, or PC moves first if you click PC move.</font></p>
 <p></p>
 <form>
-<table BORDER=0 cellpadding="1" cellspacing="1" id="Pee game">
+<table BORDER=0 cellpadding="1" cellspacing="1" id="Urinal chess">
 <tr align="center" valign="top">
 <td COLSPAN="3"></td>
-<td width="40"><img onclick="player_draught(1,1)" SRC="urinal.png"></td>
-<td COLSPAN="3"></td>
+<td width="32"><img onclick="player_draught(1)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(2)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(3)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(4)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(5)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(6)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(7)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(8)" SRC="urinal.png"></td>
+<td width="32"><img onclick="player_draught(9)" SRC="urinal.png"></td>
+
+<tr align="center" valign="middle">
+<td height="70" colspan="7"><input name="button2" type="button" class="button" onClick="new_game()" value="New game">
+&nbsp; </td>
+<td height="70"><input name="button2" type="button" class="button2" onClick="computer_draught()" value="PC move">
+</td>
 </tr>
 </table>      
 </form>
+<script LANGUAGE="JavaScript"><!--
+     randomize()
+   //--></script>
+</td>
+</tr>
+</table>
+</body>
 
 </html>
