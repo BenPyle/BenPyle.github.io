@@ -8,7 +8,6 @@ title: Urinal Chess
       
 <script language="JavaScript">
 <!--
-var z,sp,next_to_that
       a = new int_array(9)
       image=new Array()
       image[1]=new Image()
@@ -42,7 +41,7 @@ var z,sp,next_to_that
                   if (a[it]==1){
                         a[it]--
                         if (winning_position()==1){
-                              stack_toMove(it)
+                              one_way(stack_toMove(it))
                               break
                         }
                         a[it]++
@@ -51,7 +50,7 @@ var z,sp,next_to_that
                   if (a[it]>1){
                         a[it]=a[it]-2
                         if (winning_position()==1){
-                              stack_toMove(it)
+                              one_way(stack_toMove(it))
                               break
                         }
                         a[it]=a[it]+2
@@ -60,12 +59,31 @@ var z,sp,next_to_that
                   if (a[it]>2){
                         a[it]=a[it]-3
                         if (winning_position()==1){
-                              stack_toMove(it+1)
+                              one_way(stack_toMove(it)+1)
                               break
                         }
                         a[it]=a[it]+3
-                        
-                   //Take 3 and break
+                  }      
+                   //Take 3 and break, only really makes sense with more than 4
+                    if (a[it]>4){
+                         var cap=a[it] 
+                         var ij=1                  
+                         //need to check every possible pile break
+                         while(   ij<Math.ceil( (cap-3)/2 )  ) {
+                              //Just going to be sloppy and throw the new piles in slots 8 and 9 for now...
+                                a[8]=ij
+                                a[9]=cap-ij-3
+                                a[it]=0
+                         
+                              if (winning_position()==1){
+                                    one_way(stack_toMove(it)+ij+2)
+                                    break
+                              }
+                              a[8]=0
+                              a[9]=0
+                              a[it]=cap
+                         }
+                    }     
             
             }//end while
       }
