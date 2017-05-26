@@ -79,7 +79,7 @@ title: Urinal Chess
                                var cap=a[it] 
                                var ij=1                  
                                //need to check every possible pile break
-                               while(   ij<Math.ceil( (cap-3)/2 )  ) {
+                               while(   ij<=Math.ceil( (cap-3)/2 )  ) {
                                     //Just going to be sloppy and throw the new piles in slots 8 and 9 for now...
                                       a[8]=ij
                                       a[9]=cap-ij-3
