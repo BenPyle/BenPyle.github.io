@@ -35,6 +35,39 @@ var z,sp,next_to_that
       
       function computer_draught() {
             stack_count()
+            
+            if (winning_position()==0){
+            
+                  //Remove 1, only possible if stack = 1
+                  if (a[it]==1){
+                        a[it]--
+                        if (winning_position()==1){
+                              stack_toMove(it)
+                              break
+                        }
+                        a[it]++
+                  }
+                  //Remove 2, always possible with 2 or more
+                  if (a[it]>1){
+                        a[it]=a[it]-2
+                        if (winning_position()==1){
+                              stack_toMove(it)
+                              break
+                        }
+                        a[it]=a[it]+2
+                  }                  
+                   //Remove 3, always possible with 3 or more
+                  if (a[it]>2){
+                        a[it]=a[it]-3
+                        if (winning_position()==1){
+                              stack_toMove(it+1)
+                              break
+                        }
+                        a[it]=a[it]+3
+                        
+                   //Take 3 and break
+            
+            }//end while
       }
       
       function stack_count(){
@@ -48,14 +81,14 @@ var z,sp,next_to_that
             }
       }
       
-      function stack_count(ij){
+      function stack_toMove(ij){
             var stack=1
             var i=0
                   while (stack!=ij && i<8){
                         if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++ 
                         if (stack!=ij) i++
                   }
-            }
+            return i+1
       }
       
       function winning_position() {
