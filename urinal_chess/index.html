@@ -122,7 +122,7 @@ title: Urinal Chess
       
       function stack_count(){
             //updates the elements of a
-            reset_count()
+            reset_count(1,1)
             var stack=1
             var opens = 0
             var open_counter=0
@@ -160,6 +160,7 @@ title: Urinal Chess
         //var q=(a[1] ^ a[2] ^ a[3] ^ a[4]^ a[5]^ a[6]^ a[7]^ a[8]^ a[9])==0
         //list of winning positions since there is no nice formula for this game... 4, 8, (3,3) (2,2) (1,1) (1,2)
         //Just get this recursively from the directed graph...
+            reset_count(0,1)
             var ik=1
             var pee_position=0
             for (var ij=1; ij<=9; ij++) {
@@ -189,10 +190,10 @@ title: Urinal Chess
       }
       
   
-      function reset_count(){
+      function reset_count(areset,breset){
             for (var i=1; i<=9; i++) {
-                  a[i]=0
-                  b[i]=0
+                  if (areset==1) a[i]=0
+                  if (breset==1) b[i]=0
             }
       }
       function int_array(length) { this.length=length }
@@ -201,7 +202,7 @@ title: Urinal Chess
         for (var i=0; i<=8; i++) {
               document.images[i].src=image[2].src  
         }
-        reset_count()
+        reset_count(1,1)
         a[1]=9
         player_move=1
       }
