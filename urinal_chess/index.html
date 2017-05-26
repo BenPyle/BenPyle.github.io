@@ -109,6 +109,7 @@ title: Urinal Chess
       }
       
       function stack_count(){
+            //updates the elements of a
             reset_count()
             var stack=1
             if (document.images[0].src!=image[2].src) stack--
@@ -118,6 +119,7 @@ title: Urinal Chess
                         if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++  
                   }
             }
+            
       }
       
       function stack_toMove(ij){
@@ -128,7 +130,9 @@ title: Urinal Chess
                         if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++ 
                         if (stack!=ij) i++
                   }
+            console.log(i+1)
             return i+1
+            
       }
       
       function winning_position() {
