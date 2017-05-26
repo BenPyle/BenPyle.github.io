@@ -25,7 +25,8 @@ var z,sp,next_to_that
       }
       
       function player_draught(col) {
-        if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col].src==image[2].src) {
+         
+        if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col-1].src==image[2].src) {
           one_way(col)
           if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0)
             alert("You win");
