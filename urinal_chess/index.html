@@ -40,8 +40,6 @@ title: Urinal Chess
             stack_count()
             console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
             if (winning_position()==0){
-                 console.log("Computer played smart")
-
                   var it=1
                   while (it<=9){
                         //Remove 1, only possible if stack = 1
@@ -49,7 +47,6 @@ title: Urinal Chess
                               a[it]--
                               console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
                               if (winning_position()==1){
-                                    console.log("Computer played remove 1 selected col:"+stack_toMove(it))
                                     one_way(stack_toMove(it))
                                     break
                               }
@@ -60,7 +57,6 @@ title: Urinal Chess
                               a[it]=a[it]-2
                               console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
                               if (winning_position()==1){
-                                    console.log("Computer played remove 2 selected col:" +stack_toMove(it))
                                     one_way(stack_toMove(it))
                                     
                                     break
@@ -72,7 +68,6 @@ title: Urinal Chess
                               a[it]=a[it]-3
                               console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
                               if (winning_position()==1){
-                                    console.log("Computer played remove 3 selected col:" +stack_toMove(it)+1)
                                     one_way(stack_toMove(it)+1)
                                     break
                               }
@@ -90,7 +85,6 @@ title: Urinal Chess
                                       a[it]=0
 
                                     if (winning_position()==1){
-                                          console.log("Computer played take and break" +stack_toMove(it)+ij+2)
                                           one_way(stack_toMove(it)+ij+1)
                                           it=99
                                           break
@@ -215,7 +209,10 @@ title: Urinal Chess
 <tr>
 <td align="center" valign="top" bgcolor="#FFFFFF"><p style= LINE-HEIGHT:15px><font color="#663300" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>Urinal Chess</b></font></p>
 <p style= LINE-HEIGHT:10px><font face="Verdana, Arial, Helvetica, sans-serif" size="1">
-   Rules: Two players take turns occupying urinals with an endless supply of men who have to pee. You can only occupy one urinal per turn, and if you can you must (everyone has to pee). Click a urinal to fill it. Complete your turn by clicking PC move. You win by filling the last available urinal. You move first, or PC moves first if you click PC move.</font></p>
+   Rules: Two players take turns occupying urinals with an endless supply of men who have to pee. 
+  You can only occupy one urinal per turn, and if you can you must (everyone has to pee). You may not occupy any urinal adjacent
+      to an occupied urinal (bathroom etiquette, that would be weird).
+      Click a urinal to fill it. Complete your turn by clicking PC move. You win by filling the last available urinal. You move first, or PC moves first if you click PC move.</font></p>
 <p></p>
 <form>
 <table BORDER=0 cellpadding="1" cellspacing="1" id="urinal chess">
@@ -230,7 +227,7 @@ title: Urinal Chess
 <td width="60" height="85"><img onclick="player_draught(8)" SRC="urinal.gif" width="60" height="85"></td>
 <td width="60" height="85"><img onclick="player_draught(9)" SRC="urinal.gif" width="60" height="85"></td>
 <tr align="center" valign="middle">
-<td height="70" colspan="9"><input type="button" class="button" onclick="new_game()" value="New game" >
+<td height="70" colspan="4"><input type="button" class="button" onclick="new_game()" value="New game" >
 &nbsp; </td>
 <td height="70"><input type="button" class="button2" onclick="computer_draught()" value="PC move">
 </td>
@@ -242,7 +239,30 @@ title: Urinal Chess
    //--></script>
 </td>
 </tr>
-</table>
+</table>  
+      
+  
+<p> Credit for original game design goes to Tristan Williams. I suggest understanding <a href=https://benpyle.github.io/nim> Nim </a> first.  Let me know if you have suggestions for improvements. 
+<details> <summary>Game theoretic explanation</summary>
+This is a take and break style game, see <a href=https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf> Tom Ferguson's notes </a> section 4 for a detailed explanation. The general idea behind these games is that they can be turned into variants of Nim! You have 4 options for moves: take 1 (only available in the pile is 1), take 2, take 3, or take 3 and split the pile into two subpiles. Without going into detail, by the Sprague-Grundy theorem there is some function g that maps each pile into a natural number. /( g(X_1)\oplus...\oplus g(X_n) =0 \) will be a p-position! <br/>
+</details>
+      
+Bonus questions:
+<details> 
+<summary>Can you find all of the pee, I mean p, positions for the above game?</summary>
+The complete list is: 4, 8, (3,3) (2,2) (1,1) (1,2)
+</details>
+      
+<details> 
+<summary>Who wins a game with 3 seperate strings of 7,8, and 9 urinals? If player 1, what's the winning move?</summary>
+Take 2 from 9! This leaves two piles of 7 and a pile of 8. It turns out that 8 is a p-position, and the two 7's will cancel out. \( g(7) \oplus g(7) \oplus g(8) =0 \).
+</details>
+      
+<details> 
+<summary>Who wins if you are at a concert with 101 adjacent urinals?</summary>
+It turns out all odds are N positions. So taking urinal 51 to make two strings of 49 will be a winner.
+ </details>      
+ </p>       
+      
 </body>
-
 </html>
