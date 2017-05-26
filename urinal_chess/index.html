@@ -35,14 +35,14 @@ title: Urinal Chess
         }   
       }
       
-      function computer_draught() {
+      function computer_draught() {            
             stack_count()
+            console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
             if (winning_position()==0){
                  console.log("Computer played smart")
 
                   var it=1
                   while (it<=9){
-            console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
                         //Remove 1, only possible if stack = 1
                         if (a[it]==1){
                               a[it]--
@@ -111,6 +111,7 @@ title: Urinal Chess
       function stack_count(){
             reset_count()
             var stack=1
+            if (document.images[i].src!=image[2].src) stack--
             for (var i=0; i<=8; i++) {
                   if (document.images[i].src==image[2].src) a[stack]++
                   if (i!=8) {
@@ -121,6 +122,7 @@ title: Urinal Chess
       
       function stack_toMove(ij){
             var stack=1
+            if (document.images[i].src!=image[2].src) stack--
             var i=0
                   while (stack!=ij && i<8){
                         if (document.images[i].src!=image[2].src && document.images[i+1].src==image[2].src)  stack++ 
