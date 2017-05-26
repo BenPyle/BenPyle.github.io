@@ -38,6 +38,8 @@ title: Urinal Chess
       function computer_draught() {
             stack_count()
             if (winning_position()==0){
+                 console.log("Computer played smart")
+
                   var it=1
                   while (it<=9){
             console.log(a[1]+","+a[2]+","+a[3]+","+a[4]+","+a[5]+","+a[6]+","+a[7]+","+a[8]+","+a[9])
@@ -93,6 +95,7 @@ title: Urinal Chess
             }
        //Random move here
             else{
+                  console.log("Computer played dumb")
                 var ik=0
                 while(ik<=8){
                       if (document.images[ik].src==image[2].src) {
