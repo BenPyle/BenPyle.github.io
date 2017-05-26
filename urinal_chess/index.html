@@ -157,7 +157,7 @@ title: Urinal Chess
                         ik++
                   }
             }
-            if (b[1]==4 || b[1]==8) pee_position=1
+            if (b[1]==4 && b[2]==0 || b[1]==8 && b[2]==0) pee_position=1
             if ( (b[1]==b[2] && b[2]!=b[3]) || (b[1]==1 && b[2]==2) ||  (b[1]==2 && b[2]==1) ||b[1]==0 ) pee_position=1
             return pee_position
       }
