@@ -47,7 +47,7 @@ title: Urinal Chess
                         if (a[it]==1){
                               a[it]--
                               if (winning_position()==1){
-                                    console.log("Computer played remove 1")
+                                    console.log("Computer played remove 1"+stack_toMove(it))
                                     one_way(stack_toMove(it))
                                     break
                               }
@@ -57,7 +57,7 @@ title: Urinal Chess
                         if (a[it]>1){
                               a[it]=a[it]-2
                               if (winning_position()==1){
-                                    console.log("Computer played remove 2")
+                                    console.log("Computer played remove 2" +stack_toMove(it))
                                     one_way(stack_toMove(it))
                                     
                                     break
@@ -68,7 +68,7 @@ title: Urinal Chess
                         if (a[it]>2){
                               a[it]=a[it]-3
                               if (winning_position()==1){
-                                    console.log("Computer played remove 3")
+                                    console.log("Computer played remove 3" +stack_toMove(it)+1)
                                     one_way(stack_toMove(it)+1)
                                     break
                               }
@@ -86,7 +86,7 @@ title: Urinal Chess
                                       a[it]=0
 
                                     if (winning_position()==1){
-                                          console.log("Computer played take and break")
+                                          console.log("Computer played take and break" +stack_toMove(it)+ij+2)
                                           one_way(stack_toMove(it)+ij+2)
                                           break
                                     }
