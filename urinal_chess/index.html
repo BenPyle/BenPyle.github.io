@@ -10,6 +10,7 @@ title: Urinal Chess
 <!--
       var player_turn=1
       a = new int_array(9)
+      b= new int_array(9)
       image=new Array()
       image[1]=new Image()
       image[1].src="urinal_filled.gif"
@@ -127,8 +128,19 @@ title: Urinal Chess
       }
       
       function winning_position() {
-        var q=(a[1] ^ a[2] ^ a[3] ^ a[4]^ a[5]^ a[6]^ a[7]^ a[8]^ a[9])==0
-        return(q)
+        //var q=(a[1] ^ a[2] ^ a[3] ^ a[4]^ a[5]^ a[6]^ a[7]^ a[8]^ a[9])==0
+        //list of winning positions since there is no nice formula for this game... 4, 8, (3,3) (2,2) (1,1) (1,2)
+        //Just get this recursively from the directed graph...
+            var ik=1
+            var pee_position=0
+            for (var ij=1; i<=9; i++) {
+                  if (a[ij]!=0){
+                        b[ik]=a[ij]
+                        ik++
+                  }
+            }
+            if (b[1]==4 || b[1]==8) pee_position=1
+            if ( (b[1]==b[2] && b[2]!=b[3]) || (b[1]==1 && b[2]==2) ||  (b[1]==2 && b[2]==1) ) pee_position=1
       }
       
       var im=134456
@@ -150,6 +162,7 @@ title: Urinal Chess
       function reset_count(){
             for (var i=1; i<=9; i++) {
                   a[i]=0
+                  b[i]=0
             }
       }
       function int_array(length) { this.length=length }
