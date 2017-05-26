@@ -248,7 +248,7 @@ title: Urinal Chess
   
 <p> Credit for original game design goes to Tristan Williams. I suggest understanding <a href=https://benpyle.github.io/nim> Nim </a> first.  Let me know if you have suggestions for improvements. 
 <details> <summary>Game theoretic explanation</summary>
-This is a take and break style game, see <a href=https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf> Tom Ferguson's notes </a> section 4 for a detailed explanation. The general idea behind these games is that they can be turned into variants of Nim! You have 4 options for moves: take 1 (only available in the pile is 1), take 2, take 3, or take 3 and split the pile into two subpiles. Without going into detail, by the Sprague-Grundy theorem there is some function g that maps each pile into a natural number. \( g(X_1)\oplus...\oplus g(X_n) =0 \) will be a p-position! <br/>
+This is a take and break style game, see <a href=https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf> Tom Ferguson's notes </a> section 4 for a detailed explanation. The general idea behind these games is that they can be turned into variants of Nim! You have 4 options for moves: take 1 (only available if the pile is size 1), take 2, take 3, or take 3 and split the pile into two new piles. Without going into detail, by the Sprague-Grundy theorem there is some function g that maps each pile into a natural number. \( g(X_1)\oplus...\oplus g(X_n) =0 \) will be a p-position! <br/>
 </details>
       
 Bonus questions:
