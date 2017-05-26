@@ -101,6 +101,7 @@ title: Urinal Chess
                           }     
                         it++
                   }//end while
+                if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0) alert("Computer wins")  
             }
        //Random move here
             else{
@@ -157,7 +158,7 @@ title: Urinal Chess
                   }
             }
             if (b[1]==4 || b[1]==8) pee_position=1
-            if ( (b[1]==b[2] && b[2]!=b[3]) || (b[1]==1 && b[2]==2) ||  (b[1]==2 && b[2]==1) ) pee_position=1
+            if ( (b[1]==b[2] && b[2]!=b[3]) || (b[1]==1 && b[2]==2) ||  (b[1]==2 && b[2]==1) ||b[1]==0 ) pee_position=1
             return pee_position
       }
       
