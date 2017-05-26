@@ -30,6 +30,7 @@ title: Urinal Chess
         if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col-1].src==image[2].src && player_turn==1) {
           one_way(col)
           player_turn=0
+          stack_count()
           if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0) alert("You win")
            
         }   
