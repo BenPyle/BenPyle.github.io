@@ -8,6 +8,7 @@ title: Urinal Chess
       
 <script language="JavaScript">
 <!--
+      var player_turn=1
       a = new int_array(9)
       image=new Array()
       image[1]=new Image()
@@ -25,19 +26,21 @@ title: Urinal Chess
       
       function player_draught(col) {
          
-        if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col-1].src==image[2].src) {
+        if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]!=0 && document.images[col-1].src==image[2].src && player_turn==1) {
           one_way(col)
-          if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0)
-            alert("You win");
+          player_turn=0
+          if (a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7]+a[8]+a[9]==0) alert("You win")
+           
         }   
       }
       
       function computer_draught() {
             stack_count()
+            console.log(a[1]a[2]a[3]a[4]a[5]a[6]a[7]a[8]a[9])
             if (winning_position()==0){
                   var it=1
                   while (it<=9){
-
+                        console.log(a[1]a[2]a[3]a[4]a[5]a[6]a[7]a[8]a[9])
                         //Remove 1, only possible if stack = 1
                         if (a[it]==1){
                               a[it]--
@@ -99,7 +102,7 @@ title: Urinal Chess
                       ik++
                 }
             }
-                
+           player_turn=1     
       }
       
       function stack_count(){
@@ -157,7 +160,6 @@ title: Urinal Chess
         }
         reset_count()
         a[1]=9
-        console.log(a[1])
       }
       
 //-->
