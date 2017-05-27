@@ -22,7 +22,7 @@ Ferguson shows how to generalize this using a recursive procedure for a broad cl
 3. Positions that can only reach N-positions in one turn are P-positions.
 4. Repeat 2 and 3 until no unlabeled positions.
 
-Let's build some intuition, by looking at a few positions. We have a good sense of how one pile Nim works, but what about two? For convenience I will represent the number of pennies in each row seperated by a column, so (1,0) is one penny in the first row (a P-position). So what is (1,1)? The next player can move to a P-position (1,0) by taking one from the second row, so this is an N-position. What about (1,2)? This is an N-position as well, as are any of the form (1,n)! Let's think about adding a row next. (1,1,1) turns out to be an P-position, because any possible move collapses to (1,1) which is an N-position. 
+Let's build some intuition, by looking at a few positions. We have a good sense of how one pile Nim works, but what about two? For convenience I will represent the number of pennies in each row separated by a column, so (1,0) is one penny in the first row (a P-position). So what is (1,1)? The next player can move to a P-position (1,0) by taking one from the second row, so this is an N-position. What about (1,2)? This is an N-position as well, as are any of the form (1,n)! Let's think about adding a row next. (1,1,1) turns out to be an P-position, because any possible move collapses to (1,1) which is an N-position. 
 
 <details> 
   <summary>Q1: Test your intuition. What is (1,3,1)?  </summary>
