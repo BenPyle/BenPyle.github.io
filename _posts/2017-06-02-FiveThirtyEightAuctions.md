@@ -14,4 +14,4 @@ What is the object we are looking for? Well, for this sort of game we want a Bay
 
 The Bayesian version of this concept isn't so different, but since we're being all Bayesian about things know we've got beliefs floating around. These beliefs will be driven by Nature, which is basically a short-hand way of modeling randomness in the game. Being lazy and taking the definition from wikipdia... "A Bayesian Nash equilibrium is defined as a strategy profile and beliefs specified for each player about the types of the other players that maximizes the expected payoff for each player given their beliefs about the other players' types and given the strategies played by the other players."
 
-But since I'm studying for prelims... let's practice making this a bit more formal. Let's define a Bayesian game as the tuple \( \langle N, A, u, \Theta, \mu \rangle \)
+But since I'm studying for prelims... let's practice making this a bit more formal. Let's define a Bayesian game as the tuple $$ \langle N, A, u, \Theta, \mu \rangle $$
