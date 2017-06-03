@@ -23,6 +23,7 @@ But since I'm studying for prelims... let's practice making this a bit more form
 
 We can thus summarize the game as  $$ [N, \{S_i\}, \{ u_i(\cdot) \}, \Theta, F(\cdot)] $$. With this in mind, it is easy to formulate the definition of an equilibrium as: the set of decision rules $$(s_1(\cdot),...,s_N(\cdot))$$ s.t.
 $$ \mathbb{E}[u_i(s(\theta),\theta)]\geq \mathbb{E}[u_i(s'_i(\theta_i),s_{-i}(\theta_{-i}),\theta) $$.
+
 Another way of framing this is to say a profile of decision rules is a BNE iff $$ \mathbb{E}_{\theta-1}[u_i(s_i(\tilde{\theta}_i),s_{-i}(\theta_{-i},\tilde{\theta}_i)|\tilde{\theta_i}]\geq \mathbb{E}_{\theta-1}[u_i(s'_i,s_{-i}(\theta_{-i},\tilde{\theta}_i)|\tilde{\theta_i}] \forall s'_i \in S_i. $$ This definition tells us that we can basically treat each type of player seperately, with each rying to max her payoff given the conditional pd over her rivals choices.
 
 
