@@ -52,4 +52,5 @@ So, fun fact, I made this way harder than what we needed for this problem. We've
 
 $$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1}\int_0^\theta y \frac{(N-1)}{100,000,000}(\frac{y}{100,000,000})^{N-2} dy $$ 
 $$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1} * \frac{(N-1)}{100,000,000 N}[\frac{y}{100,000,000})^{N}]^\theta_0 $$
+
 $$B(\theta)=\frac{(N-1)}{N}\theta$$
