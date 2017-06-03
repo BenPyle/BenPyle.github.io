@@ -51,6 +51,6 @@ This is a bit ugly, let's see if we can exploit our symmetry a bit more. Remembe
 So, fun fact, I made this way harder than what we needed for this problem. We've actually solved this problem for a whole bunch of possible distribution functions (cool right?). But now we can just plug and chug for our problem, which uses a uniform distribution. It turns out that $$G(\theta_1)=(\frac{\theta_1}{100,000,000})^{N-1}.$$ Let's take a second to interpret this: since we have i.i.d draws from the distribution, the probability that player 1's value is the highest is just the probability that her value is higher than player 2, times the probability that her value is higher than player 3, times... well you get it, which means the pdf, g is $$\frac{(N-1)}{100,000,000}(\frac{\theta_1}{100,000,000})^{N-2}$$. So putting that all together, our answer is:
 
 $$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1}\int_0^\theta y \frac{(N-1)}{100,000,000}(\frac{y}{100,000,000})^{N-2} dy $$ 
-$$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1} * \frac{(N-1)}{100,000,000 N}[\frac{y}{100,000,000})^{N}]^\theta_0 $$
+$$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1} * \frac{100,000,000(N-1)}{N}[\frac{y}{100,000,000})^{N}]^\theta_0 $$
 
 $$B(\theta)=\frac{(N-1)}{N}\theta$$
