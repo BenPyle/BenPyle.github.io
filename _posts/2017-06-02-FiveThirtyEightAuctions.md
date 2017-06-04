@@ -58,3 +58,20 @@ $$B(\theta)=\frac{(N-1)}{N}\theta$$
 
 So when you're bidding against just your rival you want to bid one-half of how much you value the painting. Here's what your profits look like playing this strategy over a large number of draws. ![Image of bids](http://benpyle.com/img/p1_profit.png)
 As N get larger you bid closer and closer to your value. Here's what optimal play looks like as you increase your number of opponents holding your value constant. ![Image of bids](http://benpyle.com/img/p1_optimalPlay.png)
+
+FYI: these [slides] (https://economics.mit.edu/files/4874) are very good on this subject.
+
+## You scream, I scream, we all scream for all-pay
+Sure we've had analysis under one auction rule, but what about a second auction rule? Let's just go ahead and make everyone pay, regardless of whether they win. Let's take a look at the all pay auction. Since we've already done most of the work here I'm going to be a little bit less wordy for this part.
+
+The all pay setting doesn't actually change things all too much. Again we're going to look for identical, increasing functions. The payoff for player i is now $$\theta_iF^{N-1}(B_j^{-1}(b_i))-b_i$$. This is almost the same as before, except the probability distribution no longer is hitting the bid, since the player has to pay it regardless. Lets take a first order condition with respect to b:
+
+$$\theta_i(N-1)[F(B_j^{-1}(b_i))]^{N-2}\frac{f(B_j^{-1}(b_i))}{B'_j(B_j^{-1}(b_i))}-1=0 $$
+Let's use the same trick with $$B(\theta)=b$$ so $$B^{-1}(b)=\theta$$
+So we can write: $$\theta (N-1) F(\theta)^{N-2} \frac{f(\theta)}{b'(\theta)}-1=0 $$
+
+$$b'(\theta) = \theta (N-1) F(\theta)^{N-2}f(\theta) $$
+$$b(\theta) = (N-1) \int_0^\theta yF(y)^{N-2}f(y) dy $$
+But we know, $$ F(y)=\frac{x}{100,000,000}, f(y)=\frac{1}{100,000,000} $$ so
+$$ (N-1)\int_0^\theta y*(\frac{y}{100,000,000})^{N-2}*\frac{1}{100,000,000} $$
+$$ b(\theta) = \frac{(N-1)\theta^N}{N*100,000,000^{N-1} $$
