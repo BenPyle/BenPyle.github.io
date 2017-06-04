@@ -56,5 +56,5 @@ $$B(\theta)=(\frac{\theta_1}{100,000,000})^{N-1} * \frac{100,000,000(N-1)}{N}[(\
 Which gives us our final answer:
 $$B(\theta)=\frac{(N-1)}{N}\theta$$
 
-So when you're bidding against just your rival you want to bid one-half of how much you value the painting.
-As N get larger you bid closer and closer to your value. Here's what optimal play looks like as you increase your number of opponents holding your value constant. 
+So when you're bidding against just your rival you want to bid one-half of how much you value the painting. Here's what your profits look like playing this strategy over a large number of draws. ![Image of bids](http://benpyle.com/img/p1_profit.png)
+As N get larger you bid closer and closer to your value. Here's what optimal play looks like as you increase your number of opponents holding your value constant. ![Image of bids](http://benpyle.com/img/p1_optimalPlay.png)
