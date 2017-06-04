@@ -86,4 +86,4 @@ But we know, $$ F(y)=\frac{x}{100,000,000}, f(y)=\frac{1}{100,000,000} $$ so
 
 $$ (N-1)\int_0^\theta y*(\frac{y}{100,000,000})^{N-2}*\frac{1}{100,000,000} $$
 
-\boxed{$$ b(\theta) = \frac{(N-1)\theta^N}{N*100,000,000^{N-1}} $$}
+$$\fbox{ b(\theta) = \frac{(N-1)\theta^N}{N*100,000,000^{N-1}} }$$
