@@ -14,7 +14,7 @@
 
 The following explanation is adapted and borrows heavily from Tom Ferguson's notes, <https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf>. 
 
-Nim is an example of a <b>take-away game</b>, and of the larger class of combinatorial games. This game clearly has perfect information and no stochastic elements, so we know who wins based on the initial position. It is solved, which explains why you can't win if the computer plays second. 
+Nim is an example of a <b>take-away game</b>, and of the larger class of combinatorial games. This game clearly has perfect information and no stochastic elements, so we know who wins based on the initial position. It is solved, which explains why you can't win unless you play perfectly (or at all if you move first given the set-up). 
 
 ## Mind your N's and P's
 
