@@ -34,7 +34,7 @@ Let's build some intuition, by looking at a few positions. We have a good sense 
 
 <details> 
   <summary>Q1: Test your intuition. What is (1,3,1)?  </summary>
-   N-Position, removing two from the second stack gets to a P-position. A single turn to an P-position means it is a P-position.
+   N-Position, removing two from the second stack gets to a P-position. A single turn to a P-position means it is an N-position.
 </details>
 
 Ok, that example wasn't so bad, but what if we get something more complicated, like (4,3,15)?
