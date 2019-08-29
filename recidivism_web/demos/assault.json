@@ -1,0 +1,22 @@
+{"nodes":
+[
+{"name":"Assault"},
+{"name":"Murder"},
+{"name":"NegManslaughter"},
+{"name":"RapeSexAssault"},
+{"name":"Robbery"},
+{"name":"Assault"},
+{"name":"OtherViolent"},
+{"name":"Burglary"},
+{"name":"Larceny"},
+{"name":"AutoTheft"},
+{"name":"Fraud"},
+{"name":"OtherProperty"},
+{"name":"Drugs"},
+{"name":"PublicOrder"},
+{"name":"Other"},
+{"name":"None"}],
+
+"links":[ 
+{"source":0,"target":1,"value":1052},	{"source":0,"target":2,"value":197},	{"source":0,"target":3,"value":932},	{"source":0,"target":4,"value":2279},	{"source":0,"target":5,"value":13794},	{"source":0,"target":6,"value":1574},	{"source":0,"target":7,"value":3102},	{"source":0,"target":8,"value":2105},	{"source":0,"target":9,"value":1097},	{"source":0,"target":10,"value":906},	{"source":0,"target":11,"value":1370},	{"source":0,"target":12,"value":8625},	{"source":0,"target":13,"value":9201},	{"source":0,"target":14,"value":154},	{"source":0,"target":15,"value":161903}
+]}
