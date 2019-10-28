@@ -5,8 +5,8 @@ function ($scope) {
 
   $scope.master = {}; // MASTER DATA STORED BY YEAR
 
-  $scope.selected_year = 2005;
-  $scope.years = d3.range(2005, 2000, -5);
+  $scope.selected_year = 2016;
+  $scope.years = d3.range(2016, 2011, -5);
 
   $scope.filters = {};
   $scope.hasFilters = false;
