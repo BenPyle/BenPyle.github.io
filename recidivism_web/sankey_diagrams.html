@@ -8,10 +8,18 @@
 <script src="//d3js.org/d3.v4.js"></script>
 <script src="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.js"></script>
 <link  href="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
 <style>
 	#chart {
-		height: 650px;
-		width: 1100px;
+		height: w-100;
+		width: h-50;
 	}
 </style>
 <script>
