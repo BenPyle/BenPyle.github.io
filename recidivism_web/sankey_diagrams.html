@@ -20,8 +20,8 @@ var h = window.innerHeight
 </script>
 <style>
 	#chart {
-		height: 650px;
-		width: 1100px;
+		height: 90vh; /* For 100% screen height */
+    		width:  90vw; /* For 100% screen width */
 	}
 </style>
 
@@ -60,6 +60,7 @@ d3.json("allReleases.json", function(error, jsonText) {
 					labelSource: 'Input:',
 					labelTarget: 'Output:'
 				}
+				
 			}
 	objSankey = sk.createSankey('#chart', configSankey, jsonText);
 
