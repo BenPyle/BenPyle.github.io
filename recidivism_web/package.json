@@ -27,6 +27,6 @@
     "d3": "3.5.17",
     "d3-sankey-diagram": "^0.7.3",
     "jquery": "^3.4.1",
-    "modernizr": "^3.7.1"
+    "modernizr": "^3.12.0"
   }
 }
